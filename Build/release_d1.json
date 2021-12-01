@@ -1,0 +1,17 @@
+{
+"companyName": "Cebirra",
+"productName": "FFFEST",
+"productVersion": "0.1",
+"dataUrl": "release_d1.data.unityweb",
+"wasmCodeUrl": "release_d1.wasm.code.unityweb",
+"wasmFrameworkUrl": "release_d1.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "release_d1.jpg",
+"splashScreenStyle": "Light",
+"backgroundColor": "#FFFFFF",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.26f1"
+}

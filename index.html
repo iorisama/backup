@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>FFFEST | Fast Futur Fest</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/release_d1.json", {onProgress: UnityProgress});
+
+      var scaleToFit;
+      try {
+        scaleToFit = !!JSON.parse("true");
+      } catch (e) {
+        scaleToFit = true;
+      }
+
+      function onResize() {
+      var canvas = unityInstance.Module.canvas;
+      var container = unityInstance.container;
+      var w;
+      var h;
+
+      if (scaleToFit) {
+        w = window.innerWidth;
+        h = window.innerHeight;
+
+        var r = 540 / 960;
+
+        if (w * r > window.innerHeight) {
+          w = Math.min(w, Math.ceil(h / r));
+        }
+        h = Math.floor(w * r);
+      } else {
+        w = 960;
+        h = 540;
+      }
+
+      container.style.width = canvas.style.width = w + "px";
+      container.style.height = canvas.style.height = h + "px";
+    }
+    window.addEventListener('resize', onResize);
+    </script>
+    <style type="text/css">
+      body{
+        background-color : #000;
+      }
+    </style>
+  </head>
+  <body onload="onResize();">
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 540px"></div>
+    </div>
+  </body>
+</html>
